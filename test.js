@@ -1,25 +1,26 @@
-let player = "X"
-let gameOn = true
-for (let i = 1; i <= 9; i++) {
-    document.getElementById(i.toString()).addEventListener(
-      "click",function(){
-        if(this.innerHTML == "" && gameOn){
-            this.innerHTML = player;
-            this.classlist.add(player.toLowerCase());
-        }
-        
-        
-        
-        if(player == "X"){
-            player = "O"
-        }
-        else{
-            player = "X "
+let btnRef = document.querySelectorAll(".playBox");
+
+let playerX = true;
+let play=0; 
+
+btnRef.forEach((element) =>{
+    element.addEventListener("click", () => {
+        if (playerX){
+            playerX = false;
+            console.log("YEs")
+            element.innerHTML = "X";
+            element.disabled = true;
         }
 
-      }
-    );
-  }
+        else{ 
+            playerX = true;
+            element.innerText = "O";
+            element.disabled = true;
+        }
+        play+=1;
+    });
+});
+
 
 
 let Box = [
@@ -72,4 +73,3 @@ if(score==3){
     else{
         console.log("lose")
     }
-   
