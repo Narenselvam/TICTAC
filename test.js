@@ -1,3 +1,27 @@
+let player = "X"
+let gameOn = true
+for (let i = 1; i <= 9; i++) {
+    document.getElementById(i.toString()).addEventListener(
+      "click",function(){
+        if(this.innerHTML == "" && gameOn){
+            this.innerHTML = player;
+            this.classlist.add(player.toLowerCase());
+        }
+        
+        
+        
+        if(player == "X"){
+            player = "O"
+        }
+        else{
+            player = "X "
+        }
+
+      }
+    );
+  }
+
+
 let Box = [
     ["X", "O", "O"],
     ["O", "O", "X"],
