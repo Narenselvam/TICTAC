@@ -3,6 +3,8 @@ body{
     flex-direction: column;
     margin: 0%;
     background-color: rgb(3, 3, 41);
+    justify-content: center ;
+    align-items: center;
 }
 
 h1{
@@ -22,10 +24,11 @@ h1{
 
 .box{
     border: 1px solid rgb(189, 189, 189);
-    padding: 30px;
+    padding: 10px;
     text-align: center;
     height: 70px;
     width: 70px;
+    display: flex;
     
 }
 
@@ -34,4 +37,25 @@ h1{
   font-size: 60px;
 }
 
+
+.playBox{
+    border-style:solid ;
+    background-color: transparent;
+    color: antiquewhite;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 40px;
+    border: 0ch;
+    padding: 0%;
+    height: 70px;
+    width: 70px;
+    margin: 0%;
+}
+
+#reset{
+    background-color: aliceblue;
+    font-size: large;
+    width: 80px;
+    margin: 20px;
+}
 

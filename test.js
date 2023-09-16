@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+=======
+let btnRef = document.querySelectorAll(".playBox");
+
+let playerX = true;
+let play=0; 
+
+btnRef.forEach((element) =>{
+    element.addEventListener("click", () => {
+        if (playerX){
+            playerX = false;
+            console.log("YEs")
+            element.innerHTML = "X";
+            element.disabled = true;
+        }
+
+        else{ 
+            playerX = true;
+            element.innerText = "O";
+            element.disabled = true;
+        }
+        play+=1;
+    });
+});
+
+
+
+>>>>>>> origin/main
 let Box = [
     ["X", "O", "O"],
     ["O", "O", "X"],
@@ -55,4 +83,3 @@ if(score==3){
     else{
         console.log("lose")
     }
-   
