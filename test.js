@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 let btnRef = document.querySelectorAll(".playBox");
 
 let playerX = true;
@@ -23,9 +21,6 @@ btnRef.forEach((element) =>{
     });
 });
 
-
-
->>>>>>> origin/main
 let Box = [
     ["X", "O", "O"],
     ["O", "O", "X"],
