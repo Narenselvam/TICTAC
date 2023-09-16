@@ -1,32 +1,15 @@
-let player = "X"
-let gameOn = true
-for (let i = 1; i <= 9; i++) {
-    document.getElementById(i.toString()).addEventListener(
-      "click",function(){
-        if(this.innerHTML == "" && gameOn){
-            this.innerHTML = player;
-            this.classlist.add(player.toLowerCase());
-        }
-        
-        
-        
-        if(player == "X"){
-            player = "O"
-        }
-        else{
-            player = "X "
-        }
-
-      }
-    );
-  }
-
-
 let Box = [
     ["X", "O", "O"],
     ["O", "O", "X"],
-    ["X", "X", "X"],
+    ["X", "X", "O"],
 ];
+
+// document.getElementById('item1').addEventListener('click', function() {
+//     this.textContent = 'x'; // Manipulate the content of the clicked grid item
+//     console.log('sfvv');
+// }); 
+
+
 let n=Box.length
 let c=0,c1=0,c2=0,c3=0,score=0,r1=0,r2=0,r3=0
 for(i=0;i<n;i++){
