@@ -29,6 +29,9 @@ btnRef.forEach((element) =>{
             Os.push(val)
         }
         play+=1;
+
+
+
         console.log(Xs);
         console.log(Os);
     });
