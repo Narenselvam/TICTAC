@@ -17,6 +17,7 @@ btnRef.forEach((element) =>{
             val=element.getAttribute("id")
             console.log(element.innerText);
             Xs.push(val)
+            
         }
 
         else{ 
@@ -28,10 +29,11 @@ btnRef.forEach((element) =>{
             Os.push(val)
         }
         play+=1;
-
+        console.log(Xs);
+        console.log(Os);
     });
-    console.log(Os);
-    console.log(Xs);
+
+    
 });
 
 
