@@ -22,12 +22,30 @@ const winningConditions = [
 let btnRef = document.querySelectorAll(".playBox");
 btnRef.forEach((element)=>{
     element.addEventListener("click",()=>{
-        let tempVal = playerX ? "X" : "O";
-        let tempId = element.getAttribute("id");
-        indexing(tempId, tempVal);
-        element.innerText = tempVal;
-        element.disabled = true;
-        playerX = !playerX;
+
+        if(playerX){
+            playerX=false;
+            element.innerText="X";
+            element.disabled = true;
+            let tempVal=element.innerText;
+            let tempId=element.getAttribute("id");
+            console.log(tempId);
+            indexing(tempId,tempVal);
+            disp=`Player - ${tempVal}`
+            document.getElementById("player").innerText=disp
+        }
+
+        else{
+            playerX=true;
+            element.innerText="O";
+            element.disabled = true;
+            let tempVal=element.innerText;
+            let tempId=element.getAttribute("id");
+            console.log(tempId);
+            indexing(tempId,tempVal);
+            disp=`Player - ${tempVal}`
+            document.getElementById("player").innerText=disp
+        }
     })
 })
 
@@ -56,6 +74,14 @@ function winCheck(player) {
             btnRef.forEach((ele)=>{
                 ele.disabled=true;
             })
+            res= '<h2>You Won The Game👾</h2>'
+            document.getElementById('res').innerHTML=res;
+
+            let symbolColor = player === 'X' ? 'red' : 'red';
+            let symbolButtons = document.getElementsByClassName('playBox');
+            for (let btn of symbolButtons) {
+                btn.style.color = symbolColor;
+            }
             return;
         }
     }
