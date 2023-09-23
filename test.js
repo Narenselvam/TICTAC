@@ -5,8 +5,20 @@ let play=0;
 
 
 let Xs=[],Os=[]
+let r1=["0","1","2"],rr1=[]
+let r2=[3,4,5],rr2=[]
+let r3=[6,7,8],rr3=[]
 let val=""
+let res=""
 
+function Winner(){
+    r1.sort()
+    r2.sort()
+    r3.sort()
+    if(r1==rr1){
+        return('won')
+    }
+}
 btnRef.forEach((element) =>{
     element.addEventListener("click", () => {
 
@@ -17,7 +29,16 @@ btnRef.forEach((element) =>{
             val=element.getAttribute("id")
             console.log(element.innerText);
             Xs.push(val)
-            
+            if(val<=3){
+            rr1.push(val)
+            }
+            else if(val>3 && val<=5){
+                rr2.push(val)
+            }
+            else if(val>5 && val<=8){
+                rr3.push(val)
+            }
+            res=Winner(val);
         }
 
         else{ 
@@ -29,8 +50,10 @@ btnRef.forEach((element) =>{
             Os.push(val)
         }
         play+=1;
-
-
+        if(res=='won'){
+            console.log('WON');
+        }
+        
 
         console.log(Xs);
         console.log(Os);
