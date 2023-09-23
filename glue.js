@@ -4,6 +4,7 @@ let Box = [
     ["", "", ""],
     ["", "", ""]
 ];
+let move=0;
 let playerX = true;
 
 // Winning combinations
@@ -51,16 +52,21 @@ btnRef.forEach((element)=>{
 
 // Update game state
 function indexing(tempId, tempVal){
+    move+=1;
     let coordinates = tempId.split('');
     let x = parseInt(coordinates[0]);
     let y = parseInt(coordinates[1]);
     Box[x][y] = tempVal;
-    winCheck(tempVal);
+    winCheck(tempVal,move);
 }
 
 // Check for win condition
-function winCheck(player) {
+function winCheck(player,move) {
     for (let condition of winningConditions) {
+        if (move==9){
+            res= '<h2>Game👾 is Tied</h2>'
+            document.getElementById('res').innerHTML=res;
+        }
         let winCondition = [
             Box[Math.floor(condition[0]/3)][condition[0]%3],
             Box[Math.floor(condition[1]/3)][condition[1]%3],
